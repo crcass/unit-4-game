@@ -1,105 +1,106 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
-	<title>Star Wars RPG</title>
-	<link rel="stylesheet" href="./assets/css/reset.css">
-	<link rel="stylesheet" href="./assets/css/style.css">
+    <meta charset="utf-8">
+    <title>Star Wars RPG</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-	<div>
-		<h1></h1>
-			<div class="char" id="charOne" value=charOne>
-				<div class="image-container">
-					<img src="">
-				</div>
-				<h2 id="charOneName"></h2>
-				<div id="charOneStats">
-					<span>Hull Integrity:</span>
-					<span id="charOneHp"></span>
-					<span class="hidden-stats" id="charOneAtk"></span>
-					<span class="hidden-stats" id="charOneCatk"></span>
-				</div>
-			</div>
-			<div class="char" id="charTwo" value=charTwo>
-				<div class="image-container">
-					<img src="">
-				</div>
-				<h2 id="charTwoName"></h2>
-				<div id="charTwoStats">
-					<span>Hull Integrity:</span>
-					<span id="charTwoHp"></span>
-					<span class="hidden-stats" id="charTwoAtk"></span>
-					<span class="hidden-stats" id="charTwoCatk"></span>
-				</div>
-			</div>
-			<div class="char" id="charThree" value=charThree>
-				<div class="image-container">
-					<img src="">
-				</div>
-				<h2 id="charThreeName"></h2>
-				<div id="charThreeStats">
-					<span>Hull Integrity:</span>
-					<span id="charThreeHp"></span>
-					<span class="hidden-stats" id="charThreeAtk"></span>
-					<span class="hidden-stats" id="charThreeCatk"></span>
-				</div>
-			</div>
-			<div class="char" id="charFour" value=charFour>
-				<div class="image-container">
-					<img src="">
-				</div>
-				<h2 id="charFourName"></h2>
-				<div id="charFourStats">
-					<span>Hull Integrity:</span>
-					<span id="charFourHp"></span>
-					<span class="hidden-stats" id="charFourAtk"></span>
-					<span class="hidden-stats" id="charFourCatk"></span>
-				</div>
-			</div>
-	</div>
-	<div class="fight-container">
-		<div class="fight-area">
-			<div>
-				<div id="player">
-					<div class="image-container">
-						<img src="">
-					</div>
-					<h2 id="playerName"></h2>
-					<div id="playerStats">
-						<span id="hp">Hull Integrity:</span>
-						<span id="playerHp"></span>
-						<span class="hidden-stats" id="playerAtk"></span>
-					<span class="hidden-stats" id="playerCatk"></span>
-					</div>
-				</div>
-				<h2 id="vs">VS</h2>
-				<div id="enemy">
-					<div class="image-container">
-						<img src="">
-					</div>
-					<h2 id="enemyName"></h2>
-					<div id="enemyStats">
-						<span id="he">Hull Integrity:</span>
-						<span id="enemyHp"></span>
-						<span class="hidden-stats" id="enemyAtk"></span>
-					<span class="hidden-stats" id="enemyCatk"></span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<button class="attack" id="attack">Attack!</button>
-		<p id="reportP"></p>
-		<p id="reportE"></p>
-		<p id="reportCond"></p>
-		<div class="reset">
-			<p id="reset-text"></p>
-			<button id="reset-btn">Reset</button>
-		</div>
-	</div>
-	<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-	<script src="./assets/js/game.js"></script>
+    <div>
+        <h1></h1>
+        <div class="char" id="charOne" value=charOne>
+            <div class="image-container">
+                <img src="">
+            </div>
+            <h2 id="charOneName"></h2>
+            <div id="charOneStats">
+                <span>Hull Integrity:</span>
+                <span id="charOneHp"></span>
+                <span class="hidden-stats" id="charOneAtk"></span>
+                <span class="hidden-stats" id="charOneCatk"></span>
+            </div>
+        </div>
+        <div class="char" id="charTwo" value=charTwo>
+            <div class="image-container">
+                <img src="">
+            </div>
+            <h2 id="charTwoName"></h2>
+            <div id="charTwoStats">
+                <span>Hull Integrity:</span>
+                <span id="charTwoHp"></span>
+                <span class="hidden-stats" id="charTwoAtk"></span>
+                <span class="hidden-stats" id="charTwoCatk"></span>
+            </div>
+        </div>
+        <div class="char" id="charThree" value=charThree>
+            <div class="image-container">
+                <img src="">
+            </div>
+            <h2 id="charThreeName"></h2>
+            <div id="charThreeStats">
+                <span>Hull Integrity:</span>
+                <span id="charThreeHp"></span>
+                <span class="hidden-stats" id="charThreeAtk"></span>
+                <span class="hidden-stats" id="charThreeCatk"></span>
+            </div>
+        </div>
+        <div class="char" id="charFour" value=charFour>
+            <div class="image-container">
+                <img src="">
+            </div>
+            <h2 id="charFourName"></h2>
+            <div id="charFourStats">
+                <span>Hull Integrity:</span>
+                <span id="charFourHp"></span>
+                <span class="hidden-stats" id="charFourAtk"></span>
+                <span class="hidden-stats" id="charFourCatk"></span>
+            </div>
+        </div>
+    </div>
+    <div class="fight-container">
+        <div class="fight-area">
+            <div>
+                <div id="player">
+                    <div class="image-container">
+                        <img src="">
+                    </div>
+                    <h2 id="playerName"></h2>
+                    <div id="playerStats">
+                        <span id="hp">Hull Integrity:</span>
+                        <span id="playerHp"></span>
+                        <span class="hidden-stats" id="playerAtk"></span>
+                        <span class="hidden-stats" id="playerCatk"></span>
+                    </div>
+                </div>
+                <h2 id="vs">VS</h2>
+                <div id="enemy">
+                    <div class="image-container">
+                        <img src="">
+                    </div>
+                    <h2 id="enemyName"></h2>
+                    <div id="enemyStats">
+                        <span id="he">Hull Integrity:</span>
+                        <span id="enemyHp"></span>
+                        <span class="hidden-stats" id="enemyAtk"></span>
+                        <span class="hidden-stats" id="enemyCatk"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="attack" id="attack">Attack!</button>
+        <p id="reportP"></p>
+        <p id="reportE"></p>
+        <p id="reportCond"></p>
+        <div class="reset">
+            <p id="reset-text"></p>
+            <button id="reset-btn">Reset</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./assets/js/game.js"></script>
 </body>
+
 </html>
