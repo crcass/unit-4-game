@@ -1,72 +1,93 @@
 $(document).ready(function() {
 
+// game character objects
 	var charOne = {
 		name: 'X-Wing',
 		hp: 125,
-		atk: 8,
+		atk: 12,
 		cAtk: 14,
 		// img: ,
 
 		setup: function() {
-			$('#charOneName').text(charOne.name);
-			$('#charOneHp').text('HP: ' + charOne.hp);
+			$('#charOneName').text(this.name);
+			$('#charOneHp').text(this.hp);
+			$('#charOneAtk').text(this.atk);
+			$('#charOneCatk').text(this.cAtk);
 		},
 
 		player: function() {
-			$('#playerName').text(charOne.name);
-			$('#playerHp').text('HP: ' + charOne.hp);
+			$('#playerName').text(this.name);
+			$('#playerHp').text(this.hp);
+			$('#playerAtk').text(this.atk);
+			$('#playerCatk').text(this.cAtk);
+			$('#charOne').css('visibility', 'hidden');
 
 		},
 
 		enemy: function() {
-			$('#enemyName').text(charOne.name);
-			$('#enemyHp').text('HP: ' + charOne.hp);
+			$('#enemyName').text(this.name);
+			$('#enemyHp').text(this.hp);
+			$('#enemyAtk').text(this.atk);
+			$('#enemyCatk').text(this.cAtk);
+			$('#charOne').css('visibility', 'hidden');
 		}
 	}
 
 	var charTwo =  {
 		name: 'TIE Defender',
 		hp: 150,
-		atk: 6,
+		atk: 9,
 		cAtk: 12,
 		// img: ,
 
 		setup: function() {
 			$('#charTwoName').text(charTwo.name);
-			$('#charTwoHp').text('HP: ' + charTwo.hp);
+			$('#charTwoHp').text(charTwo.hp);
 		},
 
 		player: function() {
-			$('#playerName').text(charTwo.name);
-			$('#playerHp').text('HP: ' + charTwo.hp);
+			$('#playerName').text(this.name);
+			$('#playerHp').text(this.hp);
+			$('#playerAtk').text(this.atk);
+			$('#playerCatk').text(this.cAtk);
+			$('#charTwo').css('visibility', 'hidden');
 		},
 
 		enemy: function() {
-			$('#enemyName').text(charTwo.name);
-			$('#enemyHp').text('HP: ' + charTwo.hp);
+			$('#enemyName').text(this.name);
+			$('#enemyHp').text(this.hp);
+			$('#enemyAtk').text(this.atk);
+			$('#enemyCatk').text(this.cAtk);
+			$('#charTwo').css('visibility', 'hidden');
 		}
 	}
 
 	var charThree =  {
 		name: 'TIE Interceptor',
 		hp: 75,
-		atk: 12,
+		atk: 18,
 		cAtk: 16,
 		// img: ,
 
 		setup: function() {
 			$('#charThreeName').text(charThree.name);
-			$('#charThreeHp').text('HP: ' + charThree.hp);
+			$('#charThreeHp').text(charThree.hp);
 		},
 
 		player: function() {
-			$('#playerName').text(charThree.name);
-			$('#playerHp').text('HP: ' + charThree.hp);
+			$('#playerName').text(this.name);
+			$('#playerHp').text(this.hp);
+			$('#playerAtk').text(this.atk);
+			$('#playerCatk').text(this.cAtk);
+			$('#charThree').css('visibility', 'hidden');
 		},
 
 		enemy: function() {
-			$('#enemyName').text(charThree.name);
-			$('#enemyHp').text('HP: ' + charThree.hp);
+			$('#enemyName').text(this.name);
+			$('#enemyHp').text(this.hp);
+			$('#enemyAtk').text(this.atk);
+			$('#enemyCatk').text(this.cAtk);
+			$('#charThree').css('visibility', 'hidden');
 
 		}
 	}
@@ -74,36 +95,52 @@ $(document).ready(function() {
 	var charFour =  {
 		name: 'A-Wing',
 		hp: 100,
-		atk: 10,
+		atk: 15,
 		cAtk: 14,
 		// img: ,
 
 		setup: function() {
 			$('#charFourName').text(charFour.name);
-			$('#charFourHp').text('HP: ' + charFour.hp);
+			$('#charFourHp').text(charFour.hp);
 		},
 
 		player: function() {
-			$('#playerName').text(charFour.name);
-			$('#playerHp').text('HP: ' + charFour.hp);
+			$('#playerName').text(this.name);
+			$('#playerHp').text(this.hp);
+			$('#playerAtk').text(this.atk);
+			$('#playerCatk').text(this.cAtk);
+			$('#charFour').css('visibility', 'hidden');
 		},
 
 		enemy: function() {
-			$('#enemyName').text(charFour.name);
-			$('#enemyHp').text('HP: ' + charFour.hp);
+			$('#enemyName').text(this.name);
+			$('#enemyHp').text(this.hp);
+			$('#enemyAtk').text(this.atk);
+			$('#enemyCatk').text(this.cAtk);
+			$('#charFour').css('visibility', 'hidden');
 		}
 	}
 
+// global variables
 	var playerChosen;
 	var enemyChosen;
 	var playerChar;
 	var enemyChar;
+	var playerHp;
+	var enemyHp;
+	var playerAtk;
+	var atkMod = 1;
+	var enemiesDefeated = 0;
 
-	function reset() {
+// global functions
+	function setup() {
+		$('h1').text('Choose Your Ship');
 		playerChosen = false;
 		enemyChosen = false;
 		playerChar = 0;
 		enemyChar = 0;
+		atkMod = 1;
+		enemiesDefeated = 0;
 		
 		charOne.setup();
 		charTwo.setup();
@@ -128,9 +165,11 @@ $(document).ready(function() {
 			charFour.player();
 			playerChosen = true;
 		}
+		$('h1').text('Choose Your Opponent!');
+		$('#hp').css('visibility', 'visible');
 	}
 
-		function chooseEnemy() {
+	function chooseEnemy() {
 		if (enemyChar === 'charOne') {
 			charOne.enemy();
 			enemyChosen = true;
@@ -147,30 +186,76 @@ $(document).ready(function() {
 			charFour.enemy();
 			enemyChosen = true;
 		}
+		$('h1').css('visibility', 'hidden');
 	}
+
+	function reset() {
+		location.reload(true);
+	}
+
 // set up game board
-reset();
+	setup();
 
 // character select
-$('.char').on('click', function() {
-	if (playerChosen === false) {
-		playerChar = $(this).attr('value');
-		choosePlayer();
-	}
-	else if (playerChosen) {
-		if (enemyChosen === false) {
-			enemyChar = $(this).attr('value');
-			chooseEnemy();
+	$('.char').on('click', function() {
+		if (playerChosen === false) {
+			playerChar = $(this).attr('value');
+			choosePlayer();
+			$('#vs').css('visibility', 'visible');
 		}
-	}
-	if (playerChosen && enemyChosen) {
-		$('#attack').css('visibility', 'visible');
-	}
-})
+		else if (playerChosen) {
+			if (enemyChosen === false) {
+				enemyChar = $(this).attr('value');
+				chooseEnemy();
+			}
+		}
+		if (playerChosen && enemyChosen) {
+			$('#attack').css('visibility', 'visible');
+			$('#he').css('visibility', 'visible');
+		}
+	})
 
+// main game loop
+	var gameLoop = $('#attack').on('click', function() {
+			playerHp = parseInt($('#playerHp').text());
+			enemyHp = parseInt($('#enemyHp').text());
+			playerAtk = parseInt($('#playerAtk').text());
+			var enemyCatk = parseInt($('#enemyCatk').text());
+			var enemyName = $('#enemyName').text();
 
+			if (enemyHp > 0) {
+				playerAtk = playerAtk * atkMod;
+				atkMod++;
 
+				enemyHp = enemyHp - playerAtk;
+				playerHp = playerHp - enemyCatk;
+				
 
+				$('#playerHp').text(playerHp);
+				$('#enemyHp').text(enemyHp);
 
-
+				$('#reportP').text(`You hit the ${enemyName} for ${playerAtk} damage!`);
+				$('#reportE').text(`The ${enemyName} hit you for ${enemyCatk} damage!`);
+			}
+			if (enemyHp <= 0) {
+				enemiesDefeated++;
+				enemyChosen = false;
+				$('#reportCond').text(`You defeated the ${enemyName}!`);
+				$('h1').text('Choose Your Opponent!');
+				$('h1').css('visibility', 'visible');
+				$('#attack').css('visibility', 'hidden');
+			}
+			if (playerHp <= 0) {
+				$('#reportCond').text(`You were defeated by the ${enemyName}!`);
+				$('#reset-text').text('Click the Reset button to try again!');
+				$('.reset').css('visibility', 'visible');
+			}
+			if (enemiesDefeated === 3) {
+				$('h1').text('You Win! May the Force be with you!');
+				$('.reset').css('visibility', 'visible');
+			}
+		})
+	$('#reset-btn').on('click', function() {
+		reset();
+	});
 });

@@ -1,3 +1,20 @@
-button {
+#vs {
+	visibility: hidden;
+}
+
+
+.hidden-stats {
+	visibility: hidden;
+}
+
+#hp, #he {
+	visibility: hidden;
+}
+
+#attack {
+	visibility: hidden;
+}
+
+.reset {
 	visibility: hidden;
 }
