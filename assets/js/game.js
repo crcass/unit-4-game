@@ -3,16 +3,17 @@ $(document).ready(function() {
    // game character objects
    var charOne = {
       name: 'X-Wing',
-      hp: 125,
-      atk: 12,
+      hp: 115,
+      atk: 10,
       cAtk: 14,
-      // img: ,
+      img: './assets/images/xwing.png',
 
       setup: function() {
          $('#charOneName').text(this.name);
          $('#charOneHp').text(this.hp);
          $('#charOneAtk').text(this.atk);
          $('#charOneCatk').text(this.cAtk);
+         $('#charOneImg').attr('src', this.img);
       },
 
       player: function() {
@@ -20,6 +21,7 @@ $(document).ready(function() {
          $('#playerHp').text(this.hp);
          $('#playerAtk').text(this.atk);
          $('#playerCatk').text(this.cAtk);
+         $('#playerImg').attr('src', this.img);
          $('#charOne').css('visibility', 'hidden');
 
       },
@@ -29,6 +31,7 @@ $(document).ready(function() {
          $('#enemyHp').text(this.hp);
          $('#enemyAtk').text(this.atk);
          $('#enemyCatk').text(this.cAtk);
+         $('#enemyImg').attr('src', this.img);
          $('#charOne').css('visibility', 'hidden');
       }
    }
@@ -36,13 +39,16 @@ $(document).ready(function() {
    var charTwo = {
       name: 'TIE Defender',
       hp: 150,
-      atk: 9,
+      atk: 7,
       cAtk: 12,
-      // img: ,
+      img: './assets/images/td.png',
 
       setup: function() {
          $('#charTwoName').text(charTwo.name);
          $('#charTwoHp').text(charTwo.hp);
+         $('#charTwoAtk').text(this.atk);
+         $('#charTwoCatk').text(this.cAtk);
+         $('#charTwoImg').attr('src', this.img);
       },
 
       player: function() {
@@ -50,6 +56,7 @@ $(document).ready(function() {
          $('#playerHp').text(this.hp);
          $('#playerAtk').text(this.atk);
          $('#playerCatk').text(this.cAtk);
+         $('#playerImg').attr('src', this.img);
          $('#charTwo').css('visibility', 'hidden');
       },
 
@@ -58,6 +65,7 @@ $(document).ready(function() {
          $('#enemyHp').text(this.hp);
          $('#enemyAtk').text(this.atk);
          $('#enemyCatk').text(this.cAtk);
+         $('#enemyImg').attr('src', this.img);
          $('#charTwo').css('visibility', 'hidden');
       }
    }
@@ -65,13 +73,16 @@ $(document).ready(function() {
    var charThree = {
       name: 'TIE Interceptor',
       hp: 75,
-      atk: 18,
+      atk: 26,
       cAtk: 16,
-      // img: ,
+      img: './assets/images/ti.png',
 
       setup: function() {
          $('#charThreeName').text(charThree.name);
          $('#charThreeHp').text(charThree.hp);
+         $('#charThreeAtk').text(this.atk);
+         $('#charThreeCatk').text(this.cAtk);
+         $('#charThreeImg').attr('src', this.img);
       },
 
       player: function() {
@@ -79,6 +90,7 @@ $(document).ready(function() {
          $('#playerHp').text(this.hp);
          $('#playerAtk').text(this.atk);
          $('#playerCatk').text(this.cAtk);
+         $('#playerImg').attr('src', this.img);
          $('#charThree').css('visibility', 'hidden');
       },
 
@@ -87,6 +99,7 @@ $(document).ready(function() {
          $('#enemyHp').text(this.hp);
          $('#enemyAtk').text(this.atk);
          $('#enemyCatk').text(this.cAtk);
+         $('#enemyImg').attr('src', this.img);
          $('#charThree').css('visibility', 'hidden');
 
       }
@@ -97,11 +110,14 @@ $(document).ready(function() {
       hp: 100,
       atk: 15,
       cAtk: 14,
-      // img: ,
+      img: './assets/images/awing.png',
 
       setup: function() {
          $('#charFourName').text(charFour.name);
          $('#charFourHp').text(charFour.hp);
+         $('#charFourAtk').text(this.atk);
+         $('#charFourCatk').text(this.cAtk);
+         $('#charFourImg').attr('src', this.img);
       },
 
       player: function() {
@@ -109,6 +125,7 @@ $(document).ready(function() {
          $('#playerHp').text(this.hp);
          $('#playerAtk').text(this.atk);
          $('#playerCatk').text(this.cAtk);
+         $('#playerImg').attr('src', this.img);
          $('#charFour').css('visibility', 'hidden');
       },
 
@@ -117,6 +134,7 @@ $(document).ready(function() {
          $('#enemyHp').text(this.hp);
          $('#enemyAtk').text(this.atk);
          $('#enemyCatk').text(this.cAtk);
+         $('#enemyImg').attr('src', this.img);
          $('#charFour').css('visibility', 'hidden');
       }
    }
@@ -134,7 +152,7 @@ $(document).ready(function() {
 
    // global functions
    function setup() {
-      $('h1').text('Choose Your Ship');
+      $('#selText').text('Choose Your Ship');
       playerChosen = false;
       enemyChosen = false;
       playerChar = 0;
@@ -162,7 +180,7 @@ $(document).ready(function() {
          charFour.player();
          playerChosen = true;
       }
-      $('h1').text('Choose Your Opponent!');
+      $('#selText').text('Choose Your Opponent!');
       $('#hp').css('visibility', 'visible');
    }
 
@@ -180,7 +198,10 @@ $(document).ready(function() {
          charFour.enemy();
          enemyChosen = true;
       }
-      $('h1').css('visibility', 'hidden');
+      $('#selText').css('visibility', 'hidden');
+      $('#reportP').empty();
+      $('#reportE').empty();
+      $('#reportCond').empty();
    }
 
    function reset() {
@@ -234,17 +255,20 @@ $(document).ready(function() {
          enemiesDefeated++;
          enemyChosen = false;
          $('#reportCond').text(`You defeated the ${enemyName}!`);
-         $('h1').text('Choose Your Opponent!');
-         $('h1').css('visibility', 'visible');
+         $('#selText').text('Choose Your Opponent!');
+         $('#selText').css('visibility', 'visible');
          $('#attack').css('visibility', 'hidden');
       }
       if (playerHp <= 0) {
          $('#reportCond').text(`You were defeated by the ${enemyName}!`);
+         $('#selText').css('visibility', 'hidden');
          $('#reset-text').text('Click the Reset button to try again!');
          $('.reset').css('visibility', 'visible');
+         $('#attack').css('visibility', 'hidden');
       }
       if (enemiesDefeated === 3) {
-         $('h1').text('You Win! May the Force be with you!');
+         $('#selText').text('You Win! May the Force be with you!');
+         $('#reset-text').text('Click the Reset button to try again!');
          $('.reset').css('visibility', 'visible');
       }
    })

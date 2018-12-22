@@ -1,20 +1,183 @@
-#vs {
-	visibility: hidden;
+@font-face {
+	font-family: starwars;
+	src: url(../../assets/fonts/starjedi.ttf);
 }
 
+@font-face {
+	font-family: franklingb;
+	src: url(../../assets/fonts/franklingb.ttf);
+}
+
+
+body {
+	background-image: url(../../assets/images/swbg.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #000;
+	text-align: center;
+	font-family: franklingb;
+}
+
+img {
+	width: 100%;
+}
+
+p {
+	color: #4bd5ee;
+	font-weight: 900;
+}
 
 .hidden-stats {
-	visibility: hidden;
+	display: none;
 }
 
-#hp, #he {
-	visibility: hidden;
+.site-container {
+	width: 960px;
+	margin: 0 auto;
 }
 
-#attack {
-	visibility: hidden;
+h1 {
+	font-family: starwars;
+	color: #ffde06;
+	font-size: 2.5rem;
+	margin: 1rem 0 2rem 0;
+}
+
+#selText {
+	font-size: 1.25rem;
+	margin: 1rem 0 2rem 0;
+}
+
+.char-select {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 4rem;
+}
+
+.char-select h2, .char-select span {
+	color: #4bd5ee;
+}
+
+.char-select h2 {
+	font-size: 1.25rem;
+}
+
+h2 {
+	font-weight: 700;
+}
+
+.char {
+	position: relative;
+	height: 200px;
+	cursor: pointer;
+}
+
+.char-stats {
+	position: absolute;
+	bottom: 0;
+}
+
+.fight-area {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: 2rem;
+}
+
+.fight-area .image-container {
+	max-width: 350px;
+}
+
+.fight-area h2 {
+	font-size: 1.25rem;
+}
+
+#player, #enemy {
+	position: relative;
+	height: 300px;
+}
+
+.fight-text {
+	position: relative;
 }
 
 .reset {
 	visibility: hidden;
+	margin: 0;
+}
+
+#reset-text {
+	margin: 0 0 1rem 0;
+}
+
+#reset-btn {
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+#vs {
+	visibility: hidden;
+	font-family: starwars;
+	color: #ffde06;
+	font-size: 2.5rem;
+	margin: 2rem 0;
+}
+
+.fight-text p {
+	margin: 1.4rem;
+}
+
+#reportP {
+	color: #ff8f00;
+}
+
+#reportE {
+	color: #ff0000;
+}
+
+#reportCond {
+	color: #064ce8;
+}
+
+#playerHp, #enemyHp {
+	font-size: 1.25rem;
+}
+
+#hp, #he {
+	visibility: hidden;
+	font-size: 1.25rem;
+}
+
+#attack {
+	visibility: hidden;
+	position: absolute;
+	bottom: 0;
+	font-size: 1rem;
+	font-weight: 700;
+	right: 124px;
+}
+
+footer {
+  background-color: rgba(64, 64, 64, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  font-size: 0.75rem;
+  color: white;
+}
+
+footer span {
+  padding: 1rem;
+}
+
+footer a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+footer a:hover {
+  color: #F8B3FF;
 }
