@@ -72,6 +72,10 @@ h2 {
 	cursor: pointer;
 }
 
+.char:hover {
+	filter: brightness(150%);
+}
+
 .char-stats {
 	position: absolute;
 	bottom: 0;

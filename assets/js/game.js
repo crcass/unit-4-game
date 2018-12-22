@@ -286,7 +286,7 @@ $(document).ready(function() {
          $('#selText').css('visibility', 'visible');
          $('#attack').css('visibility', 'hidden');
          $('.char').css('cursor', 'pointer');
-         $('.char').css('filter', 'grayscale(0%) opacity(100%)');
+         $('.char').css('filter', '');
          $('#enemyImg').css('filter', 'grayscale(100%) opacity(30%)');
       }
       if (playerHp <= 0) {
