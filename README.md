@@ -13,4 +13,3 @@ Player clicks on the attack button to attack the enemy character. The enemy char
 * There are a few minor reflow issues, especially at the end of the game.
 * Occasionally, a random player / enemy ship image will not load. The game will still function, but there won't be a pretty picture.
 * Sounds are currently not working.
-* A-Wing image is lumpy.
