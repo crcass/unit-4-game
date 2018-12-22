@@ -205,6 +205,7 @@ $(document).ready(function() {
    }
 
    function reset() {
+      $('#selText').css('visibility', 'visible');
       $('#charOne').css('visibility', 'visible');
       $('#charTwo').css('visibility', 'visible');
       $('#charThree').css('visibility', 'visible');
