@@ -80,7 +80,7 @@ h2 {
 .fight-area {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	margin-top: 2rem;
+	margin-top: 1.5rem;
 }
 
 .fight-area .image-container {
