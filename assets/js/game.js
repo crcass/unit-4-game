@@ -205,7 +205,29 @@ $(document).ready(function() {
    }
 
    function reset() {
-      location.reload(true);
+      $('#charOne').css('visibility', 'visible');
+      $('#charTwo').css('visibility', 'visible');
+      $('#charThree').css('visibility', 'visible');
+      $('#charFour').css('visibility', 'visible');
+      $('#playerName').text('');
+      $('#playerHp').text('');
+      $('#playerAtk').text('');
+      $('#playerCatk').text('');
+      $('#playerImg').attr('src', '');
+      $('#enemyName').text('');
+      $('#enemyHp').text('');
+      $('#enemyAtk').text('');
+      $('#enemyCatk').text('');
+      $('#enemyImg').attr('src', '');
+      $('#reportP').empty();
+      $('#reportE').empty();
+      $('#reportCond').empty();
+      $('.reset').css('visibility', 'hidden');
+      $('#vs').css('visibility', 'hidden');
+      $('#hp').css('visibility', 'hidden');
+      $('#he').css('visibility', 'hidden');
+      setup();
+
    }
 
    // set up game board
