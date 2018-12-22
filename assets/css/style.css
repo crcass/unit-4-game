@@ -40,12 +40,12 @@ h1 {
 	font-family: starwars;
 	color: #ffde06;
 	font-size: 2.5rem;
-	margin: 1rem 0 2rem 0;
+	margin: 1rem 0;
 }
 
 #selText {
-	font-size: 1.25rem;
-	margin: 1rem 0 2rem 0;
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
 }
 
 .char-select {
