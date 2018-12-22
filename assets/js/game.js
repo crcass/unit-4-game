@@ -249,6 +249,8 @@ $(document).ready(function() {
       if (playerChosen && enemyChosen) {
          $('#attack').css('visibility', 'visible');
          $('#he').css('visibility', 'visible');
+         $('.char').css('cursor', 'not-allowed');
+         $('.char').css('filter', 'grayscale(100%) opacity(30%)');
       }
    })
 
@@ -281,6 +283,8 @@ $(document).ready(function() {
          $('#selText').text('Choose Your Opponent!');
          $('#selText').css('visibility', 'visible');
          $('#attack').css('visibility', 'hidden');
+         $('.char').css('cursor', 'pointer');
+         $('.char').css('filter', 'grayscale(0%) opacity(100%)');
       }
       if (playerHp <= 0) {
          $('#reportCond').text(`You were defeated by the ${enemyName}!`);
