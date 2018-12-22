@@ -240,6 +240,7 @@ $(document).ready(function() {
          playerChar = $(this).attr('value');
          choosePlayer();
          $('#vs').css('visibility', 'visible');
+         $('#playerImg').css('filter', 'grayscale(0%) opacity(100%)');
       } else if (playerChosen) {
          if (enemyChosen === false) {
             enemyChar = $(this).attr('value');
@@ -251,6 +252,7 @@ $(document).ready(function() {
          $('#he').css('visibility', 'visible');
          $('.char').css('cursor', 'not-allowed');
          $('.char').css('filter', 'grayscale(100%) opacity(30%)');
+         $('#enemyImg').css('filter', 'grayscale(0%) opacity(100%)');
       }
    })
 
@@ -285,6 +287,7 @@ $(document).ready(function() {
          $('#attack').css('visibility', 'hidden');
          $('.char').css('cursor', 'pointer');
          $('.char').css('filter', 'grayscale(0%) opacity(100%)');
+         $('#enemyImg').css('filter', 'grayscale(100%) opacity(30%)');
       }
       if (playerHp <= 0) {
          $('#reportCond').text(`You were defeated by the ${enemyName}!`);
@@ -292,6 +295,7 @@ $(document).ready(function() {
          $('#reset-text').text('Click the Reset button to try again!');
          $('.reset').css('visibility', 'visible');
          $('#attack').css('visibility', 'hidden');
+         $('#playerImg').css('filter', 'grayscale(100%) opacity(30%)');
       }
       if (enemiesDefeated === 3) {
          $('#selText').text('You Win! May the Force be with you!');
