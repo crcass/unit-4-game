@@ -186,3 +186,35 @@ footer a {
 footer a:hover {
   color: #F8B3FF;
 }
+
+@media screen and (max-width: 425px) {
+	.site-container {
+		width: 415px;
+	}
+	.char-select {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 1rem;
+	}
+
+	.char {
+		height: 150px;
+	}
+
+	.char .image-container {
+		width: 70%;
+		margin: auto;
+	}
+
+	.fight-area {
+		height: 415px;
+		margin-bottom: 2rem;
+	}
+
+	#player, #enemy {
+		height: 175px;
+	}
+
+	#attack {
+	right: 34px;
+	}
+}
