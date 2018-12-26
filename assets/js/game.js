@@ -8,7 +8,7 @@ $(document).ready(function() {
       cAtk: 14,
       img: './assets/images/xwing.png',
 
-      setup: function() {
+      setup () {
          $('#charOneName').text(this.name);
          $('#charOneHp').text(this.hp);
          $('#charOneAtk').text(this.atk);
@@ -16,7 +16,7 @@ $(document).ready(function() {
          $('#charOneImg').attr('src', this.img);
       },
 
-      player: function() {
+      player () {
          $('#playerName').text(this.name);
          $('#playerHp').text(this.hp);
          $('#playerAtk').text(this.atk);
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
       },
 
-      enemy: function() {
+      enemy () {
          $('#enemyName').text(this.name);
          $('#enemyHp').text(this.hp);
          $('#enemyAtk').text(this.atk);
@@ -43,15 +43,15 @@ $(document).ready(function() {
       cAtk: 12,
       img: './assets/images/td.png',
 
-      setup: function() {
-         $('#charTwoName').text(charTwo.name);
-         $('#charTwoHp').text(charTwo.hp);
+      setup () {
+         $('#charTwoName').text(this.name);
+         $('#charTwoHp').text(this.hp);
          $('#charTwoAtk').text(this.atk);
          $('#charTwoCatk').text(this.cAtk);
          $('#charTwoImg').attr('src', this.img);
       },
 
-      player: function() {
+      player () {
          $('#playerName').text(this.name);
          $('#playerHp').text(this.hp);
          $('#playerAtk').text(this.atk);
@@ -60,7 +60,7 @@ $(document).ready(function() {
          $('#charTwo').css('visibility', 'hidden');
       },
 
-      enemy: function() {
+      enemy () {
          $('#enemyName').text(this.name);
          $('#enemyHp').text(this.hp);
          $('#enemyAtk').text(this.atk);
@@ -77,15 +77,15 @@ $(document).ready(function() {
       cAtk: 16,
       img: './assets/images/ti.png',
 
-      setup: function() {
-         $('#charThreeName').text(charThree.name);
-         $('#charThreeHp').text(charThree.hp);
+      setup () {
+         $('#charThreeName').text(this.name);
+         $('#charThreeHp').text(this.hp);
          $('#charThreeAtk').text(this.atk);
          $('#charThreeCatk').text(this.cAtk);
          $('#charThreeImg').attr('src', this.img);
       },
 
-      player: function() {
+      player () {
          $('#playerName').text(this.name);
          $('#playerHp').text(this.hp);
          $('#playerAtk').text(this.atk);
@@ -94,7 +94,7 @@ $(document).ready(function() {
          $('#charThree').css('visibility', 'hidden');
       },
 
-      enemy: function() {
+      enemy () {
          $('#enemyName').text(this.name);
          $('#enemyHp').text(this.hp);
          $('#enemyAtk').text(this.atk);
@@ -112,15 +112,15 @@ $(document).ready(function() {
       cAtk: 14,
       img: './assets/images/awing.png',
 
-      setup: function() {
-         $('#charFourName').text(charFour.name);
-         $('#charFourHp').text(charFour.hp);
+      setup () {
+         $('#charFourName').text(this.name);
+         $('#charFourHp').text(this.hp);
          $('#charFourAtk').text(this.atk);
          $('#charFourCatk').text(this.cAtk);
          $('#charFourImg').attr('src', this.img);
       },
 
-      player: function() {
+      player () {
          $('#playerName').text(this.name);
          $('#playerHp').text(this.hp);
          $('#playerAtk').text(this.atk);
@@ -129,7 +129,7 @@ $(document).ready(function() {
          $('#charFour').css('visibility', 'hidden');
       },
 
-      enemy: function() {
+      enemy () {
          $('#enemyName').text(this.name);
          $('#enemyHp').text(this.hp);
          $('#enemyAtk').text(this.atk);
