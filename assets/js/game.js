@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
    // game character objects
-   var charOne = {
+   const charOne = {
       name: 'X-Wing',
       hp: 115,
       atk: 10,
@@ -36,7 +36,7 @@ $(document).ready(function() {
       }
    }
 
-   var charTwo = {
+   const charTwo = {
       name: 'TIE Defender',
       hp: 150,
       atk: 7,
@@ -70,7 +70,7 @@ $(document).ready(function() {
       }
    }
 
-   var charThree = {
+   const charThree = {
       name: 'TIE Interceptor',
       hp: 75,
       atk: 26,
@@ -105,7 +105,7 @@ $(document).ready(function() {
       }
    }
 
-   var charFour = {
+   const charFour = {
       name: 'A-Wing',
       hp: 100,
       atk: 15,
@@ -140,18 +140,18 @@ $(document).ready(function() {
    }
 
    // global variables
-   var playerChosen;
-   var enemyChosen;
-   var playerChar;
-   var enemyChar;
-   var playerHp;
-   var enemyHp;
-   var playerAtk;
-   var atkMod = 1;
-   var enemiesDefeated = 0;
+   let playerChosen;
+   let enemyChosen;
+   let playerChar;
+   let enemyChar;
+   let playerHp;
+   let enemyHp;
+   let playerAtk;
+   let atkMod = 1;
+   let enemiesDefeated = 0;
 
    // global functions
-   function setup() {
+   let setup = (() => {
       $('#selText').text('Choose Your Ship');
       playerChosen = false;
       enemyChosen = false;
@@ -164,37 +164,43 @@ $(document).ready(function() {
       charTwo.setup();
       charThree.setup();
       charFour.setup();
-   }
+   })
 
-   function choosePlayer() {
+   let choosePlayer = (() => {
       if (playerChar === 'charOne') {
          charOne.player();
          playerChosen = true;
-      } else if (playerChar === 'charTwo') {
+      } 
+      else if (playerChar === 'charTwo') {
          charTwo.player();
          playerChosen = true;
-      } else if (playerChar === 'charThree') {
+      } 
+      else if (playerChar === 'charThree') {
          charThree.player();
          playerChosen = true;
-      } else if (playerChar === 'charFour') {
+      } 
+      else if (playerChar === 'charFour') {
          charFour.player();
          playerChosen = true;
       }
       $('#selText').text('Choose Your Opponent!');
       $('#hp').css('visibility', 'visible');
-   }
+   })
 
-   function chooseEnemy() {
+   let chooseEnemy = (() => {
       if (enemyChar === 'charOne') {
          charOne.enemy();
          enemyChosen = true;
-      } else if (enemyChar === 'charTwo') {
+      } 
+      else if (enemyChar === 'charTwo') {
          charTwo.enemy();
          enemyChosen = true;
-      } else if (enemyChar === 'charThree') {
+      } 
+      else if (enemyChar === 'charThree') {
          charThree.enemy();
          enemyChosen = true;
-      } else if (enemyChar === 'charFour') {
+      } 
+      else if (enemyChar === 'charFour') {
          charFour.enemy();
          enemyChosen = true;
       }
@@ -202,9 +208,9 @@ $(document).ready(function() {
       $('#reportP').empty();
       $('#reportE').empty();
       $('#reportCond').empty();
-   }
+   })
 
-   function reset() {
+   let reset = (() => {
       $('#selText').css('visibility', 'visible');
       $('#charOne').css('visibility', 'visible');
       $('#charTwo').css('visibility', 'visible');
@@ -229,7 +235,7 @@ $(document).ready(function() {
       $('#he').css('visibility', 'hidden');
       setup();
 
-   }
+   })
 
    // set up game board
    setup();
@@ -241,7 +247,8 @@ $(document).ready(function() {
          choosePlayer();
          $('#vs').css('visibility', 'visible');
          $('#playerImg').css('filter', 'grayscale(0%) opacity(100%)');
-      } else if (playerChosen) {
+      } 
+      else if (playerChosen) {
          if (enemyChosen === false) {
             enemyChar = $(this).attr('value');
             chooseEnemy();
@@ -257,12 +264,12 @@ $(document).ready(function() {
    })
 
    // main game loop
-   var gameLoop = $('#attack').on('click', function() {
+   const gameLoop = $('#attack').on('click', (() => {
       playerHp = parseInt($('#playerHp').text());
       enemyHp = parseInt($('#enemyHp').text());
       playerAtk = parseInt($('#playerAtk').text());
-      var enemyCatk = parseInt($('#enemyCatk').text());
-      var enemyName = $('#enemyName').text();
+      let enemyCatk = parseInt($('#enemyCatk').text());
+      let enemyName = $('#enemyName').text();
 
       if (enemyHp > 0) {
          playerAtk = playerAtk * atkMod;
@@ -302,8 +309,8 @@ $(document).ready(function() {
          $('#reset-text').text('Click the Reset button to try again!');
          $('.reset').css('visibility', 'visible');
       }
-   })
-   $('#reset-btn').on('click', function() {
+   }))
+   $('#reset-btn').on('click', (() => {
       reset();
-   });
+   }));
 });
