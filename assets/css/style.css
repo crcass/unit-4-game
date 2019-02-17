@@ -70,6 +70,7 @@ h2 {
 	position: relative;
 	height: 200px;
 	cursor: pointer;
+	transition: all 0.3s ease;
 }
 
 .char:hover {
@@ -155,11 +156,28 @@ h2 {
 
 #attack {
 	visibility: hidden;
-	position: absolute;
-	bottom: 0;
+	background-color: transparent;
+  border: 2px solid #ffde06;
+  color: #ffde06;
+  font-family: starwars;
 	font-size: 1rem;
 	font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+	position: absolute;
+	bottom: 0;
 	right: 124px;
+	transition: all 0.3s ease;
+}
+
+#attack:hover {
+	background-color: #ffde06;
+	color: #829eb7;
+}
+
+#attack:active {
+	background-color: #ff8f00;
+	border-color: #ff8f00;
 }
 
 footer {
