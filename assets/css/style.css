@@ -70,7 +70,7 @@ h2 {
 	position: relative;
 	height: 200px;
 	cursor: pointer;
-	transition: all 0.3s ease;
+	transition: filter 0.3s ease;
 }
 
 .char:hover {
@@ -116,8 +116,26 @@ h2 {
 }
 
 #reset-btn {
+	background-color: transparent;
+	color: #4bd5ee;
+	border: 2px solid #4bd5ee;
+	padding: 0.25rem 0.5rem;
+  cursor: pointer;
 	font-size: 1rem;
 	font-weight: 700;
+	transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+
+}
+
+#reset-btn:hover {
+	background-color: #4bd5ee;
+  border: 2px solid #4bd5ee;
+  color: #000;
+}
+
+#reset-btn:active {
+	background-color: #3995d7;
+	border-color: #3995d7;
 }
 
 #vs {
@@ -166,8 +184,8 @@ h2 {
   cursor: pointer;
 	position: absolute;
 	bottom: 0;
-	right: 124px;
-	transition: all 0.3s ease;
+	right: 7.25rem;
+	transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
 }
 
 #attack:hover {
